@@ -1,0 +1,68 @@
+[
+    {
+        "name": "Radio MAX",
+        "stream_url": "https://azuracast.novi-net.net/radio/8010/radiomax.aac",
+        "slogan": "Slušaju nas svi, slušajte nas i Vi na 99,3",
+        "art": {
+            "contentDescription": "Radio Max",
+            "url": "https://cdn.onlineradiobox.com/img/l/3/24613.v11.png",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
+    },
+    {
+        "name": "Radio Code",
+        "stream_url": "https://stream.zeno.fm/efe91skxn18uv.m3u",
+        "slogan": "Music for coders",
+        "art": {
+            "contentDescription": "Radio Code",
+            "url": "https://s3.amazonaws.com/cdn.dabblelab.com/img/audiostream-starter-512x512.png",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
+    },
+    {
+        "name": "Dirt Road FM",
+        "stream_url": "https://stream-41.zeno.fm/dw6gz9d7kuhvv",
+        "slogan": "The hart of country",
+        "art": {
+            "contentDescription": "Dirt Road FM",
+            "url": "https://dirtroad.fm/wp-content/uploads/2022/06/277556678_172600948438912_7731978694376604771_n-370x370.jpg",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
+    },
+    {
+        "name": "Rock FM",
+        "stream_url": "https://live.rockfm.ro/rockfm.aacp",
+        "slogan": "It Rocks!",
+        "art": {
+            "contentDescription": "Rock FM",
+            "url": "https://myradioonline.ro/public/uploads/radio_img/rock-fm/play_250_250.jpg",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
+    },
+    {
+        "name": "Box UK",
+        "stream_url": "https://boxstream.danceradiouk.com/stream/1/",
+        "slogan": "Box UK plays the best mix of then and now. From the 80’s right through to current top 40.",
+        "art": {
+            "contentDescription": "Box UK",
+            "url": "https://danceradiouk.com/players/files/images/albumart/13040-BoxUK-300.jpg",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
+    },
+    {
+        "name": "Dance UK",
+        "stream_url": "https://dancestream.danceradiouk.com/stream/1/",
+        "slogan": "Dance UK plays the best dance music mix. Club, House, Dance & Trance.",
+        "art": {
+            "contentDescription": "Dance UK",
+            "url": "\thttps://danceradiouk.com/players/files/images/albumart/13040-DanceUK-300.jpg",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
+    }
+]
