@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken');
+
 module.exports.getTextResponse = function (text, shouldEndSession = false) {
     return {
         "version": "1.0",
@@ -19,6 +21,12 @@ module.exports.getEmptyResponse = function () {
 }
 
 module.exports.startRadioStream = function (radioStream, textToSpeak = '') {
+    let token = jwt.sign({
+        radioStream: radioStream,
+        timestamp: Date.now(),
+        initiatedBy: "radio"
+    }, 'alexa');
+
     let response = {
         "version": "1.0",
         "response": {
@@ -29,7 +37,7 @@ module.exports.startRadioStream = function (radioStream, textToSpeak = '') {
                     "audioItem": {
                         "stream": {
                             "url": radioStream.stream_url,
-                            "token": radioStream.name.replace(/\s/g, '-') + '?' + Date.now(),
+                            "token": token,
                             "offsetInMilliseconds": 0
                         },
                         "metadata": {

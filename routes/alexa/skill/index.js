@@ -4,6 +4,7 @@ const util = require('util');
 const Fuse = require('fuse.js')
 const alexaResponse = require('./../../../alexa/alexaResponse');
 const radioStations = require('./../../../data/radio_stations.json');
+const jwt = require('jsonwebtoken');
 
 /* GET users listing. */
 router.post('/', function (req, res, next) {
@@ -107,11 +108,9 @@ function getLastRadioStation(audioPlayer) {
     let lastRadioStation = radioStations[0];
 
     if (audioPlayer.token) {
-        let tokenizedQuery = audioPlayer.token;
-        tokenizedQuery = tokenizedQuery.replace(/-/g, ' ');
-        tokenizedQuery = tokenizedQuery.replace(/\?.*/,'');
+        let tokenizedQuery = jwt.decode(audioPlayer.token, 'alexa');
 
-        const radioStation = getRadioStation(tokenizedQuery);
+        const radioStation = getRadioStation(tokenizedQuery.radioStream.name);
 
         if (radioStation !== null) {
             lastRadioStation = radioStation;
