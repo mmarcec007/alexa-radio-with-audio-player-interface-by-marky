@@ -18,7 +18,7 @@ module.exports.getEmptyResponse = function () {
     }
 }
 
-module.exports.playSong = function (song, textToSpeak = '', offset = 0) {
+module.exports.startRadioStream = function (radioStream, textToSpeak = '') {
     let response = {
         "version": "1.0",
         "response": {
@@ -28,16 +28,16 @@ module.exports.playSong = function (song, textToSpeak = '', offset = 0) {
                     "playBehavior": "REPLACE_ALL",
                     "audioItem": {
                         "stream": {
-                            "url": song.stream_url,
-                            "token": song.name.replace(/\s/g, '-') + '?' + Date.now(),
-                            "offsetInMilliseconds": offset
+                            "url": radioStream.stream_url,
+                            "token": radioStream.name.replace(/\s/g, '-') + '?' + Date.now(),
+                            "offsetInMilliseconds": 0
                         },
                         "metadata": {
-                            "title": song.name,
-                            "subtitle": song.slogan,
+                            "title": radioStream.name,
+                            "subtitle": radioStream.slogan,
                             "art": {
                                 "sources": [
-                                    song.art
+                                    radioStream.art
                                 ]
                             }
                         }
@@ -56,37 +56,7 @@ module.exports.playSong = function (song, textToSpeak = '', offset = 0) {
     return response;
 }
 
-module.exports.enqueueSong = function (currentSong, previousSongToken) {
-    return {
-        "version": "1.0",
-        "response": {
-            "directives": [
-                {
-                    "type": "AudioPlayer.Play",
-                    "playBehavior": "ENQUEUE",
-                    "audioItem": {
-                        "stream": {
-                            "url": currentSong.url,
-                            "token": currentSong.name,
-                            "expectedPreviousToken": previousSongToken,
-                            "offsetInMilliseconds": 0,
-                            "captionData": {
-                                "content": "WEBVTT\n\n00:00.000 --> 00:02.107\n<00:00.006>My <00:00.0192>Audio <00:01.232>Captions.\n",
-                                "type": "WEBVTT"
-                            }
-                        },
-                        "metadata": {
-                            "title": "title of the track to display",
-                            "subtitle": "subtitle of the track to display",
-                        }
-                    }
-                }
-            ]
-        }
-    }
-}
-
-module.exports.stopSong = function (shouldEndSession = false) {
+module.exports.stopRadioStream = function (shouldEndSession = false) {
     return {
         "version": "1.0",
         "response": {

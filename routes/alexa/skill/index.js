@@ -14,7 +14,7 @@ router.post('/', function (req, res, next) {
     switch (request.type) {
         case 'LaunchRequest':
             const text = `Starting ${radioStations[0].name}`;
-            response = alexaResponse.playSong(radioStations[0]);
+            response = alexaResponse.startRadioStream(radioStations[0]);
             break;
         case 'IntentRequest':
             switch (request.intent.name) {
@@ -25,26 +25,26 @@ router.post('/', function (req, res, next) {
                         const currentRadioStation = getRadioStation(radioStation);
                         if (currentRadioStation !== null) {
                             console.log("Got current radio station [" + util.inspect(currentRadioStation, false, null, true) + ']');
-                            response = alexaResponse.playSong(currentRadioStation);
+                            response = alexaResponse.startRadioStream(currentRadioStation);
                         } else {
                             response = alexaResponse.getTextResponse(radioStation + ' is not available right now. Please try again');
                         }
                     } else {
                         let lastRadioStation = getLastRadioStation(context.AudioPlayer);
-                        response = alexaResponse.playSong(lastRadioStation);
+                        response = alexaResponse.startRadioStream(lastRadioStation);
                     }
                     break;
                 case 'AMAZON.PauseIntent':
                 case 'AMAZON.StopIntent':
                 case 'AMAZON.CancelIntent':
-                    response = alexaResponse.stopSong(true);
+                    response = alexaResponse.stopRadioStream(true);
                     break;
                 case 'AMAZON.ResumeIntent':
                     if (context.AudioPlayer) {
                         const playerActivity = context.AudioPlayer.playerActivity;
                         const token = context.AudioPlayer.token;
                         if (context.AudioPlayer.playerActivity !== 'IDLE') {
-                            response = alexaResponse.playSong(getLastRadioStation(context.AudioPlayer));
+                            response = alexaResponse.startRadioStream(getLastRadioStation(context.AudioPlayer));
                         } else {
                             response = alexaResponse.getEmptyResponse();
                         }
@@ -72,10 +72,10 @@ router.post('/', function (req, res, next) {
             response = alexaResponse.getEmptyResponse();
             break;
         case 'PlaybackController.PlayCommandIssued':
-            response = alexaResponse.playSong(getLastRadioStation(context.AudioPlayer));
+            response = alexaResponse.startRadioStream(getLastRadioStation(context.AudioPlayer));
             break;
         case 'PlaybackController.PauseCommandIssued':
-            response = alexaResponse.stopSong();
+            response = alexaResponse.stopRadioStream();
             break;
         case 'PlaybackController.NextCommandIssued':
         case 'PlaybackController.PreviousCommandIssued':
