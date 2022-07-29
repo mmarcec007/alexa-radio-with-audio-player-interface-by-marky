@@ -35,6 +35,9 @@ router.post('/', function (req, res, next) {
                         response = alexaResponse.startRadioStream(lastRadioStation);
                     }
                     break;
+                case 'AvailableRadioStationsIntent':
+                    response = alexaResponse.getAplListResponse('This is what you can listen to eight now.', radioStations)
+                    break;
                 case 'AMAZON.PauseIntent':
                 case 'AMAZON.StopIntent':
                 case 'AMAZON.CancelIntent':
@@ -84,6 +87,17 @@ router.post('/', function (req, res, next) {
             break;
         case 'AudioPlayer.PlaybackFailed':
             response = alexaResponse.getEmptyResponse();
+            break;
+        case 'Alexa.Presentation.APL.UserEvent':
+            const arguments = request.arguments;
+            const radioStationName = arguments[0].name;
+            const radioStation = getRadioStation(radioStationName);
+            if (radioStation !== null) {
+                console.log("Got current radio station [" + util.inspect(radioStation, false, null, true) + '] via APL User event.');
+                response = alexaResponse.startRadioStream(radioStation);
+            } else {
+                response = alexaResponse.getTextResponse(radioStationName + ' is not available right now. Please try again');
+            }
             break;
         case 'SessionEndedRequest':
             response = alexaResponse.getEmptyResponse();

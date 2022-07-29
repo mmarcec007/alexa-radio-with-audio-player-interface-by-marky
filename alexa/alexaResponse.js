@@ -84,3 +84,118 @@ module.exports.clearQueue = function (clearBehaviour) {
         "clearBehavior" : clearBehaviour
     }
 }
+
+module.exports.getAplListResponse = function (text, stationsList) {
+    let apl = {
+        "type": "Alexa.Presentation.APL.RenderDocument",
+        "token": "episodesListToken",
+        "document": {
+            "type": "APL",
+            "version": "1.6",
+            "extensions": [
+                {
+                    "name": "Back",
+                    "uri": "aplext:backstack:10"
+                }
+            ],
+            "settings": {
+                "Back": {
+                    "backstackId": "radioStreamsList"
+                }
+            },
+            "theme": "dark",
+            "import": [
+                {
+                    "name": "alexa-layouts",
+                    "version": "1.3.0"
+                }
+            ],
+            "mainTemplate": {
+                "parameters": [
+                    "payload"
+                ],
+                "items": [
+                    {
+                        "type": "AlexaImageList",
+                        "headerTitle": "${payload.textListData.title}",
+                        "headerBackButton": false,
+                        "headerAttributionImage": "${payload.textListData.logoUrl}",
+                        "backgroundImageSource": "${payload.textListData.backgroundImage.sources[0].url}",
+                        "listItems": "${payload.textListData.listItems}",
+                        "touchForward": true,
+                        "id": "radioStationsList"
+                    }
+                ]
+            }
+        },
+        "datasources": {
+            "textListData": {
+                "type": "object",
+                "objectId": "textListSample",
+                "backgroundImage": {
+                    "contentDescription": null,
+                    "smallSourceUrl": null,
+                    "largeSourceUrl": null,
+                    "sources": [
+                        {
+                            "url": "https://www.cnet.com/a/img/RAUXAZx571IYN23S1Q39i4oCaJw=/940x0/2017/08/01/89e33dde-c9d3-4769-95f3-f9f46454b175/all-video-new-1400.jpg",
+                            "size": "large"
+                        }
+                    ]
+                },
+                "title": "Available Radio Stations",
+                "listItems": [
+                    {
+                        "primaryText": "Radio MAX",
+                        "imageSource": "https://cdn.onlineradiobox.com/img/l/3/24613.v11.png",
+                        "primaryAction": [
+                            {
+                                "type": "SendEvent",
+                                "arguments": [
+                                    {
+                                        "type": "radioStation",
+                                        "name": "Radio MAX"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "logoUrl": "https://d2o906d8ln7ui1.cloudfront.net/images/templates_v3/logo/logo-modern-botanical-white.png"
+            }
+        },
+        "sources": {}
+    };
+
+    apl.datasources.textListData.listItems = stationsList.map(item => {
+        return {
+            "primaryText": item.name,
+            "imageSource": item.art.url,
+            "primaryAction": [
+                {
+                    "type": "SendEvent",
+                    "arguments": [
+                        {
+                            "type": "radioStation",
+                            "name": item.name
+                        }
+                    ]
+                }
+            ]
+        }
+    });
+
+    return {
+        "version": "1.0",
+        "response": {
+            "outputSpeech": {
+                "type": "PlainText",
+                "text": text
+            },
+            "directives": [
+                apl
+            ],
+            "shouldEndSession": false
+        }
+    }
+}
