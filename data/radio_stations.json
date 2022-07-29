@@ -33,12 +33,34 @@
         }
     },
     {
-        "name": "Rock FM",
-        "stream_url": "https://live.rockfm.ro/rockfm.aacp",
-        "slogan": "It Rocks!",
+        "name": "Classic Rock Florida",
+        "stream_url": "https://vip2.fastcast4u.com/proxy/classicrockdoug?mp=/1",
+        "slogan": "Classic Rock Hits from the 60s, 70s, 80s through today!",
         "art": {
-            "contentDescription": "Rock FM",
-            "url": "https://myradioonline.ro/public/uploads/radio_img/rock-fm/play_250_250.jpg",
+            "contentDescription": "Classic Rock Florida",
+            "url": "https://cdn.onlineradiobox.com/img/l/2/26822.v7.png",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
+    },
+    {
+        "name": "American Road Radio",
+        "stream_url": "https://c5.radioboss.fm:18224/stream",
+        "slogan": "American Road Radio is an Internet Radio station broadcasting from Los Angeles, California, United States, provides Blues, Rock, Country music.",
+        "art": {
+            "contentDescription": "American Road Radio",
+            "url": "https://cdn.onlineradiobox.com/img/l/9/9549.v2.png",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
+    },
+    {
+        "name": "Rock It FM",
+        "stream_url": "https://us2.maindigitalstream.com/ssl/KITN",
+        "slogan": "American Road Radio is an Internet Radio station broadcasting from Los Angeles, California, United States, provides Blues, Rock, Country music.",
+        "art": {
+            "contentDescription": "Rock It FM",
+            "url": "https://cdn.onlineradiobox.com/img/l/3/30353.v7.png",
             "widthPixels": 512,
             "heightPixels": 512
         }
