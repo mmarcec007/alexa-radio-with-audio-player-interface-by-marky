@@ -138,29 +138,13 @@ module.exports.getAplListResponse = function (text, stationsList) {
                     "largeSourceUrl": null,
                     "sources": [
                         {
-                            "url": "https://www.cnet.com/a/img/RAUXAZx571IYN23S1Q39i4oCaJw=/940x0/2017/08/01/89e33dde-c9d3-4769-95f3-f9f46454b175/all-video-new-1400.jpg",
+                            "url": "https://static.vecteezy.com/system/resources/previews/001/379/971/non_2x/vintage-and-retro-music-radio-background-free-vector.jpg",
                             "size": "large"
                         }
                     ]
                 },
                 "title": "Available Radio Stations",
-                "listItems": [
-                    {
-                        "primaryText": "Radio MAX",
-                        "imageSource": "https://cdn.onlineradiobox.com/img/l/3/24613.v11.png",
-                        "primaryAction": [
-                            {
-                                "type": "SendEvent",
-                                "arguments": [
-                                    {
-                                        "type": "radioStation",
-                                        "name": "Radio MAX"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
+                "listItems": [],
                 "logoUrl": "https://d2o906d8ln7ui1.cloudfront.net/images/templates_v3/logo/logo-modern-botanical-white.png"
             }
         },
