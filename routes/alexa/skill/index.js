@@ -19,7 +19,8 @@ router.post('/', function (req, res, next) {
         case 'IntentRequest':
             switch (request.intent.name) {
                 case 'PlayRadioStreamIntent':
-                    if (request.intent.slots && request.intent.slots.radioStation) {
+                    if (request.intent.slots && request.intent.slots.radioStation &&
+                        request.intent.slots.radioStation.slotValue) {
                         const radioStation = request.intent.slots.radioStation.slotValue.value;
                         const currentRadioStation = getRadioStation(radioStation);
                         if (currentRadioStation !== null) {
