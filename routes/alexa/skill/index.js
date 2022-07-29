@@ -82,6 +82,9 @@ router.post('/', function (req, res, next) {
         case 'PlaybackController.PreviousCommandIssued':
             response = alexaResponse.getEmptyResponse();
             break;
+        case 'AudioPlayer.PlaybackFailed':
+            response = alexaResponse.getEmptyResponse();
+            break;
         case 'SessionEndedRequest':
             response = alexaResponse.getEmptyResponse();
             break;
