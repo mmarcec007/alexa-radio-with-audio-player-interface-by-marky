@@ -24,7 +24,8 @@ module.exports.startRadioStream = function (radioStream, textToSpeak = '') {
     let token = jwt.sign({
         radioStream: radioStream,
         timestamp: Date.now(),
-        initiatedBy: "radio"
+        initiatedBy: "radio",
+        serviceId: "marky-radio"
     }, 'alexa');
 
     let response = {
