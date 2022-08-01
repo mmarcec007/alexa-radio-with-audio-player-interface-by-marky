@@ -94,7 +94,16 @@ router.post('/', function (req, res, next) {
             const radioStation = getRadioStation(radioStationName);
             if (radioStation !== null) {
                 console.log("Got current radio station [" + util.inspect(radioStation, false, null, true) + '] via APL User event.');
-                response = alexaResponse.startRadioStream(radioStation);
+                let playingStation = '';
+                if (context.AudioPlayer.token) {
+                    const tokenizedQuery = jwt.decode(context.AudioPlayer.token, 'alexa');
+                    playingStation = tokenizedQuery.radioStream.name;
+                }
+                if (radioStationName === playingStation) {
+                    response = alexaResponse.getEmptyResponse();
+                } else {
+                    response = alexaResponse.startRadioStream(radioStation);
+                }
             } else {
                 response = alexaResponse.getTextResponse(radioStationName + ' is not available right now. Please try again');
             }
