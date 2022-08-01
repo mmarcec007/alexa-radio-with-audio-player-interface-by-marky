@@ -82,7 +82,29 @@
         "slogan": "Dance UK plays the best dance music mix. Club, House, Dance & Trance.",
         "art": {
             "contentDescription": "Dance UK",
-            "url": "\thttps://danceradiouk.com/players/files/images/albumart/13040-DanceUK-300.jpg",
+            "url": "https://danceradiouk.com/players/files/images/albumart/13040-DanceUK-300.jpg",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
+    },
+    {
+        "name": "Radio 1",
+        "stream_url": "https://azuracast.novi-net.net/radio/8020/radio1.aac",
+        "slogan": "Radio 1 najslušaniji radio na 105.6 Mhz!",
+        "art": {
+            "contentDescription": "Radio 1",
+            "url": "https://cdn.onlineradiobox.com/img/l/6/47416.v5.png",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
+    },
+    {
+        "name": "Radio 105 Selnica",
+        "stream_url": "https://azuracast.novi-net.net/radio/8050/radio105.aac",
+        "slogan": "Dobre Vibracije Za Sve Generacije!",
+        "art": {
+            "contentDescription": "Radio 105 Selnica",
+            "url": "https://cdn.onlineradiobox.com/img/l/3/23783.v9.png",
             "widthPixels": 512,
             "heightPixels": 512
         }
