@@ -108,5 +108,16 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Radio Deejay HR",
+        "stream_url": "https://c2.hostingcentar.com/streams/radiodj/;",
+        "slogan": "First Croatian internet radio.",
+        "art": {
+            "contentDescription": "Radio Deejay HR",
+            "url": "https://deejay.hr/wp-content/uploads/2022/02/RDJ.jpg",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
