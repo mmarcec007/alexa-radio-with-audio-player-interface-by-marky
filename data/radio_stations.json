@@ -112,10 +112,10 @@
     {
         "name": "Radio Deejay HR",
         "stream_url": "https://c2.hostingcentar.com/streams/radiodj/;",
-        "slogan": "First Croatian internet radio.",
+        "slogan": "Croatia's only Dance Radio.",
         "art": {
             "contentDescription": "Radio Deejay HR",
-            "url": "https://mark-test-private.eu.ngrok.io/images/radio-deejay-hr.jpg",
+            "url": "https://urchin-app-ymtkz.ondigitalocean.app/images/radio-deejay-hr.jpg",
             "widthPixels": 512,
             "heightPixels": 512
         }
