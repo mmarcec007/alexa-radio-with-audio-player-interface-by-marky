@@ -26,13 +26,13 @@ router.post('/', function (req, res, next) {
                         const currentRadioStation = getRadioStation(radioStation);
                         if (currentRadioStation !== null) {
                             console.log("Got current radio station [" + util.inspect(currentRadioStation, false, null, true) + ']');
-                            response = alexaResponse.startRadioStream(currentRadioStation);
+                            response = alexaResponse.startRadioStream(currentRadioStation, 'Starting ' + currentRadioStation.name);
                         } else {
                             response = alexaResponse.getTextResponse(radioStation + ' is not available right now. Please try again');
                         }
                     } else {
                         let lastRadioStation = getLastRadioStation(context.AudioPlayer);
-                        response = alexaResponse.startRadioStream(lastRadioStation);
+                        response = alexaResponse.startRadioStream(lastRadioStation, 'Starting ' + currentRadioStation.name);
                     }
                     break;
                 case 'AvailableRadioStationsIntent':
