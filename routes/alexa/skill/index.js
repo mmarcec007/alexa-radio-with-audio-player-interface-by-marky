@@ -69,8 +69,6 @@ router.post('/', function (req, res, next) {
             break;
         case 'AMAZON.CancelIntent':
         case 'AudioPlayer.PlaybackStarted':
-            response = alexaResponse.getEmptyResponse();
-            break;
         case 'AudioPlayer.PlaybackStopped':
         case 'AudioPlayer.PlaybackNearlyFinished':
             response = alexaResponse.getEmptyResponse();
