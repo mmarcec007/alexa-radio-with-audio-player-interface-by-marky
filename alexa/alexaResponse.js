@@ -32,7 +32,7 @@ module.exports.startRadioStream = function (radioStream, textToSpeak = '') {
         "version": "1.0",
         "response": {
             "outputSpeech": {
-                "type": "PlainTet",
+                "type": "PlainText",
                 "text": textToSpeak
             },
             "directives": [
