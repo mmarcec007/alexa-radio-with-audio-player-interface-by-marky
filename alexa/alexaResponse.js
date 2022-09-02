@@ -30,37 +30,37 @@ module.exports.startRadioStream = function (radioStream, textToSpeak = '') {
 
     let response = {
         "version": "1.0",
-        "response": {
-            "directives": [
-                {
-                    "type": "AudioPlayer.Play",
-                    "playBehavior": "REPLACE_ALL",
-                    "audioItem": {
-                        "stream": {
-                            "url": radioStream.stream_url,
-                            "token": token,
-                            "offsetInMilliseconds": 0
-                        },
-                        "metadata": {
-                            "title": radioStream.name,
-                            "subtitle": radioStream.slogan,
-                            "art": {
-                                "sources": [
-                                    radioStream.art
-                                ]
-                            }
-                        }
-                    }
-                }
-            ]
-        }
     };
 
+    response.response = {};
     if (textToSpeak !== '') {
         response.response.outputSpeech = {};
         response.response.outputSpeech.type = "PlainTet";
         response.response.outputSpeech.text = textToSpeak;
     }
+
+    response.response.directives = [
+        {
+            "type": "AudioPlayer.Play",
+            "playBehavior": "REPLACE_ALL",
+            "audioItem": {
+                "stream": {
+                    "url": radioStream.stream_url,
+                    "token": token,
+                    "offsetInMilliseconds": 0
+                },
+                "metadata": {
+                    "title": radioStream.name,
+                    "subtitle": radioStream.slogan,
+                    "art": {
+                        "sources": [
+                            radioStream.art
+                        ]
+                    }
+                }
+            }
+        }
+    ];
 
     return response;
 }

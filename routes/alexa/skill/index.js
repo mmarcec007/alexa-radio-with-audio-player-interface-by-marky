@@ -32,7 +32,7 @@ router.post('/', function (req, res, next) {
                         }
                     } else {
                         let lastRadioStation = getLastRadioStation(context.AudioPlayer);
-                        response = alexaResponse.startRadioStream(lastRadioStation, 'Starting ' + currentRadioStation.name);
+                        response = alexaResponse.startRadioStream(lastRadioStation, 'Starting ' + lastRadioStation.name);
                     }
                     break;
                 case 'AvailableRadioStationsIntent':
