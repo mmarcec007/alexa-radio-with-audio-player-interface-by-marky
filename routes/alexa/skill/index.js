@@ -40,7 +40,6 @@ router.post('/', function (req, res, next) {
                     break;
                 case 'AMAZON.PauseIntent':
                 case 'AMAZON.StopIntent':
-                case 'AMAZON.CancelIntent':
                     response = alexaResponse.stopRadioStream(true);
                     break;
                 case 'AMAZON.ResumeIntent':
@@ -68,6 +67,7 @@ router.post('/', function (req, res, next) {
                     break;
             }
             break;
+        case 'AMAZON.CancelIntent':
         case 'AudioPlayer.PlaybackStarted':
             response = alexaResponse.getEmptyResponse();
             break;
