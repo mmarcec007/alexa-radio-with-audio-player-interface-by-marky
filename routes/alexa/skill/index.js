@@ -111,6 +111,7 @@ router.post('/', function (req, res, next) {
             break;
     }
 
+    console.log(util.inspect(response, false, null, true /* enable colors */));
     res.send(response);
 });
 
