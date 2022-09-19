@@ -13,6 +13,24 @@ module.exports.getTextResponse = function (text, shouldEndSession = false) {
     }
 }
 
+module.exports.getSimpleCardResponse = function (speechText, title, content, shouldEndSession = false) {
+    return {
+        "version": "1.0",
+        "response": {
+            "outputSpeech": {
+                "type": "PlainText",
+                "text": speechText
+            },
+            "card": {
+                "type": "Simple",
+                "title": title,
+                "content": content
+            },
+            "shouldEndSession": shouldEndSession
+        }
+    }
+}
+
 module.exports.getEmptyResponse = function () {
     return {
         "version": "1.0",

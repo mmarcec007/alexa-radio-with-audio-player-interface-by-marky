@@ -1,6 +1,7 @@
 [
     {
         "name": "Radio MAX",
+        "slug": "radio-max",
         "stream_url": "https://azuracast.novi-net.net/radio/8010/radiomax.aac",
         "slogan": "Slušaju nas svi, slušajte nas i Vi na 99,3",
         "art": {
@@ -12,6 +13,7 @@
     },
     {
         "name": "Radio Code",
+        "slug": "radio-code",
         "stream_url": "https://stream.zeno.fm/efe91skxn18uv.m3u",
         "slogan": "Music for coders",
         "art": {
@@ -23,6 +25,7 @@
     },
     {
         "name": "Dirt Road FM",
+        "slug": "dirt-road-fm",
         "stream_url": "https://stream-41.zeno.fm/dw6gz9d7kuhvv",
         "slogan": "The hart of country",
         "art": {
@@ -34,6 +37,7 @@
     },
     {
         "name": "Classic Rock Florida",
+        "slug": "classic-rock-florida",
         "stream_url": "https://vip2.fastcast4u.com/proxy/classicrockdoug?mp=/1",
         "slogan": "Classic Rock Hits from the 60s, 70s, 80s through today!",
         "art": {
@@ -45,6 +49,7 @@
     },
     {
         "name": "American Road Radio",
+        "slug": "american-road-radio",
         "stream_url": "https://c5.radioboss.fm:18224/stream",
         "slogan": "American Road Radio is an Internet Radio station broadcasting from Los Angeles, California, United States, provides Blues, Rock, Country music.",
         "art": {
@@ -56,6 +61,7 @@
     },
     {
         "name": "Rock It FM",
+        "slug": "rock-it-fm",
         "stream_url": "https://us2.maindigitalstream.com/ssl/KITN",
         "slogan": "American Road Radio is an Internet Radio station broadcasting from Los Angeles, California, United States, provides Blues, Rock, Country music.",
         "art": {
@@ -67,6 +73,7 @@
     },
     {
         "name": "Box UK",
+        "slug": "box-uk",
         "stream_url": "https://boxstream.danceradiouk.com/stream/1/",
         "slogan": "Box UK plays the best mix of then and now. From the 80’s right through to current top 40.",
         "art": {
@@ -78,6 +85,7 @@
     },
     {
         "name": "Dance UK",
+        "slug": "dance-uk",
         "stream_url": "https://dancestream.danceradiouk.com/stream/1/",
         "slogan": "Dance UK plays the best dance music mix. Club, House, Dance & Trance.",
         "art": {
@@ -89,6 +97,7 @@
     },
     {
         "name": "Radio 1",
+        "slug": "radio-1",
         "stream_url": "https://azuracast.novi-net.net/radio/8020/radio1.aac",
         "slogan": "Radio 1 najslušaniji radio na 105.6 Mhz!",
         "art": {
@@ -100,6 +109,7 @@
     },
     {
         "name": "Radio 105 Selnica",
+        "slug": "radio-105-selnica",
         "stream_url": "https://azuracast.novi-net.net/radio/8050/radio105.aac",
         "slogan": "Dobre Vibracije Za Sve Generacije!",
         "art": {
@@ -111,6 +121,7 @@
     },
     {
         "name": "Radio Deejay HR",
+        "slug": "radio-deejay-hr",
         "stream_url": "https://c2.hostingcentar.com/streams/radiodj/;",
         "slogan": "Croatia's only Dance Radio.",
         "art": {

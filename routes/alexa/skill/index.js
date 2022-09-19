@@ -5,9 +5,12 @@ const Fuse = require('fuse.js')
 const alexaResponse = require('./../../../alexa/alexaResponse');
 const radioStations = require('./../../../data/radio_stations.json');
 const jwt = require('jsonwebtoken');
+const xpath = require('xpath');
+const dom = require('xmldom').DOMParser
+const axios = require('axios').default;
 
 /* GET users listing. */
-router.post('/', function (req, res, next) {
+router.post('/', async function (req, res, next) {
     console.log(util.inspect(req.body, false, null, true /* enable colors */));
     const {request, context} = req.body;
     let response = alexaResponse.getEmptyResponse();
@@ -64,6 +67,14 @@ router.post('/', function (req, res, next) {
                 case 'AMAZON.ShuffleOnIntent':
                 case 'AMAZON.ShuffleOffIntent':
                     response = alexaResponse.getTextResponse('This action is not supported for the current audio stream.', true);
+                    break;
+                    case 'WhatIsPlayingIntent':
+                        response = alexaResponse.getTextResponse('I can\'t get the info at the moment.')
+                        if (context.AudioPlayer.playerActivity === 'PLAYING') {
+                            const lastRadioStation = getLastRadioStation(context.AudioPlayer);
+                            const radioStationOnlineInfoText = await getRadioStationOnlineInfo(lastRadioStation);
+                            response = alexaResponse.getSimpleCardResponse(radioStationOnlineInfoText, 'Marky Radio Song Info', radioStationOnlineInfoText,true);
+                        }
                     break;
             }
             break;
@@ -143,6 +154,30 @@ function getLastRadioStation(audioPlayer) {
     }
 
     return lastRadioStation;
+}
+
+async function getRadioStationOnlineInfo(radioStation) {
+    switch (radioStation.slug) {
+        case 'radio-deejay-hr':
+            const page = await axios.get('https://deejay.hr/radio/');
+            console.log("Printing fetched page", page.data);
+            let message = 'Sorry, I was not able to get the current song from '
+                + radioStation.name + '. Please try again in a few moments';
+
+            if (page.status === 200) {
+                const xpathString = 'string(/html/body/div[2]/section/ol/li[1]/text())';
+
+                var doc = new dom().parseFromString(page.data)
+                var currentSong = xpath.select(xpathString, doc)
+
+                console.log('Printing current song', currentSong);
+                message = currentSong;
+            }
+
+            return message;
+        default:
+            return 'No info is available at hte time for ' + radioStation.name;
+    }
 }
 
 module.exports = router;
