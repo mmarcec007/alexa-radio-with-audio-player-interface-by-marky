@@ -73,7 +73,14 @@ router.post('/', async function (req, res, next) {
                         if (context.AudioPlayer.playerActivity === 'PLAYING') {
                             const lastRadioStation = getLastRadioStation(context.AudioPlayer);
                             const radioStationOnlineInfoText = await getRadioStationOnlineInfo(lastRadioStation);
-                            response = alexaResponse.getSimpleCardResponse(radioStationOnlineInfoText, 'Marky Radio Song Info', radioStationOnlineInfoText,true);
+                            const shazamSearchResult = await getSongDataFromShazamBySearchTerm(radioStationOnlineInfoText);
+                            if (shazamSearchResult instanceof Error) {
+                                response = alexaResponse.getSimpleCardResponse('Sorry I wasn\'t able to recognize the song.', 'Marky Radio Song Info', shazamSearchResult.message, true);
+                            } else {
+                                const track = shazamSearchResult.tracks.hits[0].track;
+                                const speechText = 'This is ' + track.title + ' by ' + track.subtitle;
+                                response = alexaResponse.getStandardCardResponse(speechText, 'Marky Radio Song Info', track.subtitle + ' - ' + track.title, track.images.coverart,track.images.coverarthq,true);
+                            }
                         }
                     break;
             }
@@ -178,6 +185,25 @@ async function getRadioStationOnlineInfo(radioStation) {
         default:
             return 'No info is available at hte time for ' + radioStation.name;
     }
+}
+
+async function getSongDataFromShazamBySearchTerm (searchTerm) {
+    const options = {
+        method: 'GET',
+        url: 'https://shazam.p.rapidapi.com/search',
+        params: {term: searchTerm, locale: 'en-US', offset: '0', limit: '5'},
+        headers: {
+            'X-RapidAPI-Key': '261a2fad8amsh19119e53fd75434p1435b6jsn72b6a4816a68',
+            'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+        }
+    };
+
+    const shazamSearchResponse = await axios.request(options);
+    if (shazamSearchResponse.status === 200) {
+        return shazamSearchResponse.data;
+    }
+
+    throw new Error(shazamSearchResponse.statusText);
 }
 
 module.exports = router;

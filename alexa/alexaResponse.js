@@ -31,6 +31,28 @@ module.exports.getSimpleCardResponse = function (speechText, title, content, sho
     }
 }
 
+module.exports.getStandardCardResponse = function (speechText, title, text, smallImageUrl, largeImageUrl, shouldEndSession = false) {
+    return {
+        "version": "1.0",
+        "response": {
+            "outputSpeech": {
+                "type": "PlainText",
+                "text": speechText
+            },
+            "card": {
+                "type": "Standard",
+                "title": title,
+                "text": text,
+                "image": {
+                    "smallImageUrl": smallImageUrl,
+                    "largeImageUrl": largeImageUrl
+                }
+            },
+            "shouldEndSession": shouldEndSession
+        }
+    }
+}
+
 module.exports.getEmptyResponse = function () {
     return {
         "version": "1.0",
