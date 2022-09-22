@@ -82,7 +82,7 @@ router.post('/', async function (req, res, next) {
                                     response = alexaResponse.getSimpleCardResponse(radioStationOnlineInfoText, 'Marky Radio - Song Info', radioStationOnlineInfoText, true);
                                 } else {
                                     const speechText = 'This is ' + track.title + ' by ' + track.subtitle;
-                                    response = alexaResponse.getStandardCardResponse(speechText, 'Marky Radio - Song Info', track.subtitle + ' - ' + track.title, track.images.coverart,track.images.coverarthq,true);
+                                    response = alexaResponse.getStandardCardResponse(speechText, 'Marky Radio - Song Info powered by Shazam', track.subtitle + ' - ' + track.title, track.images.coverart,track.images.coverarthq,true);
                                 }
                             }
                         }
