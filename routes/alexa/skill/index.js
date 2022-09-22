@@ -77,9 +77,13 @@ router.post('/', async function (req, res, next) {
                             if (shazamSearchResult instanceof Error) {
                                 response = alexaResponse.getSimpleCardResponse('Sorry I wasn\'t able to recognize the song.', 'Marky Radio Song Info', shazamSearchResult.message, true);
                             } else {
-                                const track = shazamSearchResult.tracks.hits[0].track;
-                                const speechText = 'This is ' + track.title + ' by ' + track.subtitle;
-                                response = alexaResponse.getStandardCardResponse(speechText, 'Marky Radio Song Info', track.subtitle + ' - ' + track.title, track.images.coverart,track.images.coverarthq,true);
+                                const track = shazamSearchResult?.tracks?.hits[0]?.track;
+                                if (track === undefined) {
+                                    response = alexaResponse.getSimpleCardResponse(radioStationOnlineInfoText, 'Marky Radio - Song Info', radioStationOnlineInfoText, true);
+                                } else {
+                                    const speechText = 'This is ' + track.title + ' by ' + track.subtitle;
+                                    response = alexaResponse.getStandardCardResponse(speechText, 'Marky Radio - Song Info', track.subtitle + ' - ' + track.title, track.images.coverart,track.images.coverarthq,true);
+                                }
                             }
                         }
                     break;
@@ -191,7 +195,7 @@ async function getSongDataFromShazamBySearchTerm (searchTerm) {
     const options = {
         method: 'GET',
         url: 'https://shazam.p.rapidapi.com/search',
-        params: {term: searchTerm, locale: 'en-US', offset: '0', limit: '5'},
+        params: {term: searchTerm, offset: '0', limit: '1'},
         headers: {
             'X-RapidAPI-Key': '261a2fad8amsh19119e53fd75434p1435b6jsn72b6a4816a68',
             'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
