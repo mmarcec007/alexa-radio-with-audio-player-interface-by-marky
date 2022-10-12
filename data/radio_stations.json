@@ -130,5 +130,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Radio Megaton",
+        "slug": "radio-megaton",
+        "stream_url": "https://chopin.bizmusic.net/radio/8030/radio.mp3",
+        "slogan": "Govorni dio programa emitira se od 6 do 21 sat, dok noćni dio programa čini glazba, većinom domaće produkcije. ",
+        "art": {
+            "contentDescription": "Radio Megaton",
+            "url": "https://cdn.onlineradiobox.com/img/l/5/24615.v8.png",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
