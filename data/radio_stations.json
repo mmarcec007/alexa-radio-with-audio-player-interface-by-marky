@@ -142,5 +142,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Studio M",
+        "slug": "studio-m",
+        "stream_url": "https://azuracast.novi-net.net/radio/8040/studiom.aac",
+        "slogan": "Studio M - gradski radio grada Preloga - samo najvažnije informacije i najbolja glazba.",
+        "art": {
+            "contentDescription": "Studio M",
+            "url": "https://cdn.onlineradiobox.com/img/l/7/47417.v6.png",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
