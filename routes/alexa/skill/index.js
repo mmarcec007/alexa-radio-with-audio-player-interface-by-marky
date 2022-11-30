@@ -186,6 +186,15 @@ async function getRadioStationOnlineInfo(radioStation) {
             }
 
             return message;
+        case 'sport-fm':
+            const currentSongResponse = await axios.get('https://api.laut.fm/station/sport-fm/current_song');
+            console.log("Printing fetched current song response", currentSongResponse.data);
+            let currentSongString = '';
+            if (currentSongResponse.status === 200) {
+                currentSongString = currentSongResponse.data.artist + ' ' + currentSongResponse.data.title;
+            }
+
+            return currentSongString;
         default:
             return 'No info is available at hte time for ' + radioStation.name;
     }
