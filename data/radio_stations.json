@@ -154,5 +154,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Sport FM",
+        "slug": "sport-fm",
+        "stream_url": "https://sport-fm.stream.laut.fm/sport-fm",
+        "slogan": "Sport-FM Mir Künne Dat....!!!!!",
+        "art": {
+            "contentDescription": "Sport FM",
+            "url": "https://www.radio.de/images/broadcasts/f7/2f/6685/2/c300.png",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
