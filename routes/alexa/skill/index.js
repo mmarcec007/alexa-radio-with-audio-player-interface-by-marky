@@ -191,7 +191,7 @@ async function getRadioStationOnlineInfo(radioStation) {
             console.log("Printing fetched current song response", currentSongResponse.data);
             let currentSongString = '';
             if (currentSongResponse.status === 200) {
-                currentSongString = currentSongResponse.data.artist + ' ' + currentSongResponse.data.title;
+                currentSongString = currentSongResponse.data.artist.name + ' ' + currentSongResponse.data.title;
             }
 
             return currentSongString;
