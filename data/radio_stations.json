@@ -166,5 +166,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Country Station",
+        "slug": "country-station",
+        "stream_url": "https://country-station.stream.laut.fm/country-station",
+        "slogan": "Das Beste aus der US-Countryszene 24 Stunden am Tag",
+        "art": {
+            "contentDescription": "Country Station",
+            "url": "https://assets.laut.fm/cfda9e4fbee8cea6518be90b56580a58",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
