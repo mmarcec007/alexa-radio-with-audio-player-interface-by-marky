@@ -192,6 +192,7 @@ async function getRadioStationOnlineInfo(radioStation) {
         case 'xmasfm':
         case 'powertrance-one':
         case 'bassfm':
+        case 'gaggenau':
             const currentSongResponse = await axios.get('https://api.laut.fm/station/'+radioStation.slug+'/current_song');
             console.log("Printing fetched current song response", currentSongResponse.data);
             let currentSongString = '';

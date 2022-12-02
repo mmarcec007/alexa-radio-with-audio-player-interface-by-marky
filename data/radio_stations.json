@@ -226,5 +226,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Gaggenau",
+        "slug": "gaggenau",
+        "stream_url": "https://stream.laut.fm/gaggenau",
+        "slogan": "Alles für unsere Slavs.",
+        "art": {
+            "contentDescription": "Gaggenau",
+            "url": "https://assets.laut.fm/ce9a55a7652e1c08cc767e3e7a87f217",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
