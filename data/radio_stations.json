@@ -178,5 +178,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Memoryhits",
+        "slug": "memoryhits",
+        "stream_url": "https://stream.laut.fm/memoryhits",
+        "slogan": "Rock & Roll & Remember.\n",
+        "art": {
+            "contentDescription": "Memoryhits",
+            "url": "https://assets.laut.fm/ef1e3ff3891e5f467a5ce57b21cd55fc",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
