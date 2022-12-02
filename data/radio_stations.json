@@ -238,5 +238,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Radiorock",
+        "slug": "radiorock",
+        "stream_url": "https://stream.laut.fm/radiorock",
+        "slogan": "Rock.",
+        "art": {
+            "contentDescription": "Radiorock",
+            "url": "https://assets.laut.fm/0904db4f01441a8614ae6a03d0cc8a81",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
