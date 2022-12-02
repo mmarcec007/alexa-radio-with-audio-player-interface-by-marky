@@ -187,7 +187,12 @@ async function getRadioStationOnlineInfo(radioStation) {
 
             return message;
         case 'sport-fm':
-            const currentSongResponse = await axios.get('https://api.laut.fm/station/sport-fm/current_song');
+        case 'country-station':
+        case 'memoryhits':
+        case 'xmasfm':
+        case 'powertrance-one':
+        case 'bassfm':
+            const currentSongResponse = await axios.get('https://api.laut.fm/station/'+radioStation.slug+'/current_song');
             console.log("Printing fetched current song response", currentSongResponse.data);
             let currentSongString = '';
             if (currentSongResponse.status === 200) {

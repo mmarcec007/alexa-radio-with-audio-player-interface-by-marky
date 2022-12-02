@@ -214,5 +214,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Bass FM",
+        "slug": "bassfm",
+        "stream_url": "https://stream.laut.fm/bassfm",
+        "slogan": "H4YFM | Bass.",
+        "art": {
+            "contentDescription": "Bass FM",
+            "url": "https://assets.laut.fm/e837bb137d5e31a048d55632f3f84394",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
