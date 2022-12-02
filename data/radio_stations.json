@@ -190,5 +190,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "XmasFM",
+        "slug": "xmasfm",
+        "stream_url": "https://stream.laut.fm/xmasfm",
+        "slogan": "XmasFM - Deine Weihnachtshits 2022.",
+        "art": {
+            "contentDescription": "XmasFM",
+            "url": "https://assets.laut.fm/adbce5e6e4028515338ff2598ef9c874",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
