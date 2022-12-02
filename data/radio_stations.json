@@ -202,5 +202,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Powertrance One",
+        "slug": "powertrance-one",
+        "stream_url": "https://stream.laut.fm/powertrance-one",
+        "slogan": "Progressive Trance / Trance Forever.",
+        "art": {
+            "contentDescription": "Powertrance One",
+            "url": "https://assets.laut.fm/4fac0980620916f444c792732953bc3a",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
