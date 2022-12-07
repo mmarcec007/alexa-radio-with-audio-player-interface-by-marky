@@ -250,5 +250,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Radio Trapline",
+        "slug": "radio-trapline",
+        "stream_url": "https://stream.laut.fm/radio-trapline",
+        "slogan": "Weiter geht's in der Sendung »Rotation« mit Armin Van Burren, Armin van Burren und armin van Burren (bis 6:00).",
+        "art": {
+            "contentDescription": "Radio Trapline",
+            "url": "https://assets.laut.fm/7cbc28dc40b0eeb6a8f510c46f8ace1a",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
