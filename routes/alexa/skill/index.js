@@ -13,7 +13,7 @@ const axios = require('axios').default;
 router.post('/', async function (req, res, next) {
     console.log(util.inspect(req.body, false, null, true /* enable colors */));
     const {request, context} = req.body;
-    let response = alexaResponse.getEmptyResponse();
+    let response = alexaResponse.getEmptyResponse(true);
 
     switch (request.type) {
         case 'LaunchRequest':
@@ -129,7 +129,7 @@ router.post('/', async function (req, res, next) {
             }
             break;
         case 'SessionEndedRequest':
-            response = alexaResponse.getEmptyResponse();
+            response = alexaResponse.getEmptyResponse(true);
             break;
     }
 

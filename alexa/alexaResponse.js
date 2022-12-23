@@ -53,10 +53,12 @@ module.exports.getStandardCardResponse = function (speechText, title, text, smal
     }
 }
 
-module.exports.getEmptyResponse = function () {
+module.exports.getEmptyResponse = function (shouldEndSession = false) {
     return {
         "version": "1.0",
-        "response": {}
+        "response": {
+            "shouldEndSession": shouldEndSession
+        }
     }
 }
 
