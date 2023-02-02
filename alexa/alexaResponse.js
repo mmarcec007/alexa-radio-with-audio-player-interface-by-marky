@@ -98,7 +98,8 @@ module.exports.startRadioStream = function (radioStream, textToSpeak = '') {
                         }
                     }
                 }
-            ]
+            ],
+            shouldEndSession: true
         }
     };
 

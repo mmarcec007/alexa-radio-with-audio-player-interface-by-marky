@@ -262,5 +262,17 @@
             "widthPixels": 512,
             "heightPixels": 512
         }
+    },
+    {
+        "name": "Die Neue 1077 Modern Rock",
+        "slug": "die-neue-1077-modern-rock",
+        "stream_url": "https://dieneue1077--di--nacs-ais-lgc--09--cdn.cast.addradio.de/dieneue1077/modernrock/high/stream.mp3",
+        "slogan": "Die Neue 107.7 Modern Rock",
+        "art": {
+            "contentDescription": "Die Neue 107.7 Modern Rock",
+            "url": "https://upload.dieneue1077.de/production/static/1675175241396/64668de6b89a360c009ac910e3a06285.svg",
+            "widthPixels": 512,
+            "heightPixels": 512
+        }
     }
 ]
